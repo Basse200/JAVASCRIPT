@@ -1,0 +1,78 @@
+<!DOCTYPE html>  
+<html lang="fr">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Je crois que c'est ça</title>
+
+    <!-- Du css pour un peu de fun-->
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 20px;  
+        }  
+        h1 {  
+            color: #4CAF50;  
+        }  
+        .fonction {  
+            margin-bottom: 20px;  
+            padding: 10px;  
+            border: 1px solid #ccc;  
+            border-radius: 5px;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <h1>Exemples de Fonctions Python</h1>  
+
+    <!-- Section pour inverser une chaîne -->  
+    <div class="fonction">  
+        <h2>1. Inverser une chaîne</h2>  
+        <input type="text" id="chaine" placeholder="Entrez une chaîne" />  
+        <button onclick="afficherInverse()">Inverser</button>  
+        <p id="resultatInversion"></p>  
+    </div>  
+
+    <!-- Section pour compter les caractères -->  
+    <div class="fonction">  
+        <h2>2. Compter les caractères</h2>  
+        <input type="text" id="texte" placeholder="Entrez une chaîne" />  
+        <button onclick="compterCaracteres()">Compter</button>  
+        <p id="resultatCounting"></p>  
+    </div>  
+
+    <!-- Section pour les mot en majuscule -->  
+    <div class="fonction">  
+        <h2>3. Mettre les mots en majuscule</h2>  
+        <input type="text" id="phrase" placeholder="Entrez une phrase" />  
+        <button onclick="mettreMajuscule()">Mettre en Majuscule</button>  
+        <p id="resultatMajuscule"></p>  
+    </div>  
+
+         <!-- Functions JS Script -->
+
+    <script>    
+        function afficherInverse() {  
+            const chaine = document.getElementById("chaine").value;  
+            const inverse = chaine.split('').reverse().join('');  
+            document.getElementById("resultatInversion").innerText = "Chaîne inversée : " + inverse;  
+        }  
+
+        function compterCaracteres() {  
+            const texte = document.getElementById("texte").value;  
+            const count = texte.length;  
+            document.getElementById("resultatCounting").innerText = "Nombre de caractères : " + count;  
+        }  
+
+        function mettreMajuscule() {  
+            const phrase = document.getElementById("phrase").value;  
+            const resultat = phrase.split(' ').map(mot => mot.charAt(0).toUpperCase() + mot.slice(1)).join(' ');  
+            document.getElementById("resultatMajuscule").innerText = "Phrase avec mots en majuscule : " + resultat;  
+        }  
+    </script>  
+
+    <!-- END -->
+
+</body>  
+</html>
